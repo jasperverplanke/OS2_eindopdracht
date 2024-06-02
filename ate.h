@@ -11,13 +11,17 @@ private:
 	int ThreadsMax;
 	int bassIntensity, trebleIntensity;
 	SafeFileWriter* writer;
-
+	std::string inFileName;
 public:
-	ate();
+	//ate();
 	ate(int p, int bass, int treble, std::string inFileName, std::string outFileName);
 	int blok(int maxThreads, int blokAdress);
 	void bassCoefficients(int intintensity, double* b0, double* b1, double* b2, double* a1, double* a2);
 	void trebleCoefficients(int intintensity, double* b0, double* b1, double* b2, double* a1, double* a2);
+	void bassFilter(int bass, const signed short inputArray[], signed short outputArray[]);
+	void trebleFilter(int treble, const signed short inputArray[], signed short outputArray[]);
+	signed short returnWithinRange(int input);
+	void calculateBlock(int bass, int treble, const signed short inputArray[], signed short outputArray[]);
 	//int execute(int p, int bass, int treble, std::string inFileName, std::string outFileName);
 };
 

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="ate.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SaveFileWriter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ate.h" />

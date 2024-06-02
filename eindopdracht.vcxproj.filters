@@ -21,6 +21,9 @@
     <ClCompile Include="ate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SaveFileWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ate.h">

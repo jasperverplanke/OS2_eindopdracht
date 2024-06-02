@@ -1,1 +1,2 @@
 C:\Users\verpl\Documents\OS\OS2\eindopdracht\x64\Debug\eindopdracht.exe
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\x64\Debug\eindopdracht.exe
