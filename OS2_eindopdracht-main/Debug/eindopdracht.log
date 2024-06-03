@@ -1,2 +1,8 @@
-﻿  main.cpp
+﻿  ate.cpp
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\ate.cpp(55,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\ate.cpp(56,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\ate.cpp(60,133): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\ate.cpp(71,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\ate.cpp(72,78): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\ate.cpp(76,134): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   eindopdracht.vcxproj -> C:\Users\verpl\Documents\OS\OS2\eindopdracht\OS2_eindopdracht\OS2_eindopdracht-main\Debug\eindopdracht.exe

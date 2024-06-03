@@ -155,8 +155,8 @@ ate::ate(int maxThreads, int bass, int treble, std::string inFileName, std::stri
 	this->inFileName = inFileName;
 	SafeFileWriter writer(outFileName);
 	this->writer = &writer;
-	int use = 0;
-	int blokRunning = 0;
+	//int use = 0;
+	//int blokRunning = 0;
 	std::streampos fileSize;
 	std::ifstream file(inFileName, std::ios::binary);
 
@@ -172,14 +172,9 @@ ate::ate(int maxThreads, int bass, int treble, std::string inFileName, std::stri
 	}
 
 
-
-	//std::ofstream outputFile(inFileName);
-	//if (!outputFile.is_open()) { // Check if the file was opened successfully
-	//	std::cerr << "Error: Could not open the file " << inFileName << std::endl;
-	//	//return 1;
-	//}
+	
 	std::vector<std::thread> threads;
-	std::vector<int> threadsPerThread;
+	//std::vector<int> threadsPerThread;
 	int currentUse = 0;
 	int initiatedAdress = 0;
 	bool end = false;
@@ -189,39 +184,26 @@ ate::ate(int maxThreads, int bass, int treble, std::string inFileName, std::stri
 		
 		if (ThreadsMax - currentUse > 0 ) {
 			
-			//std::cout << currentUse << " +3 " << " < " << ThreadsMax << std::endl;
-			
-			use = ThreadsMax - currentUse;
-			if (use > 2) {
-
-				use = 2;
-			}
-			blokRunning += 1;
-			threads.emplace_back(&ate::blok, this, use, initiatedAdress);
-			threadsPerThread.emplace_back(use);
-			currentUse += use +1;
+		
+			//blokRunning += 1;
+			threads.emplace_back(&ate::blok, this, 1, initiatedAdress);
+			//threadsPerThread.emplace_back(use);
+			currentUse += 1;
 			
 			initiatedAdress += 2048;
 			totalUse++;
 			//std::cout << initiatedAdress << " / " << fileSize <<  "    " << blokRunning << " using " << use << std::endl;
 		}
 		else {
-			/*/for (auto& t : threads) {
-				if (t.joinable()) {
-					t.join();
-					std::cout << "Thread id = " << threads << std::this_thread::get_id() << " is closed.\n";
-					//end = true;
-
-				}
-			}*/
+		
 			for (size_t i = 0; i < threads.size(); ++i) {
 				if (threads[i].joinable()) {
 					threads[i].join();
 					//std::cout << "Thread is closed with use = " << threadsPerThread[i] << ".\n";
 					threads.erase(threads.begin() + i);
-					currentUse -= threadsPerThread[i] + 1;
-					threadsPerThread.erase(threadsPerThread.begin() + i);
-					blokRunning -= 1;
+					currentUse -= 1;
+					//threadsPerThread.erase(threadsPerThread.begin() + i);
+					//blokRunning -= 1;
 
 				}
 			}
@@ -235,14 +217,14 @@ ate::ate(int maxThreads, int bass, int treble, std::string inFileName, std::stri
 				threads[i].join();
 				//std::cout << "Thread is closed with use = " << threadsPerThread[i] << ".\n";
 				threads.erase(threads.begin() + i);
-				currentUse -= threadsPerThread[i] + 1;
-				threadsPerThread.erase(threadsPerThread.begin() + i);
-				blokRunning -= 1;
+				currentUse -= 1;
+				//threadsPerThread.erase(threadsPerThread.begin() + i);
+				//blokRunning -= 1;
 
 			}
 		}
 	}
-	std::cout << blokRunning << " using " << use << "    =" << totalUse << std::endl;
+	std::cout << currentUse << "<-current threads  runs->" << totalUse << std::endl;
 	//outputFile.close();
 
 	//return 0;

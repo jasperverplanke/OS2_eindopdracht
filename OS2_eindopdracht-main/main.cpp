@@ -1,7 +1,8 @@
 #include "ate.h"
 #include <string>
 #include <iostream>
-//eindopdracht.exe -p:5 -b:0 -t:-3 "you_and_i.pcm" "mysong"
+//eindopdracht.exe -p:5 -b:0 -t:-3 "you_and_i.pcm" "mysong.pcm"
+// door Jasper Verplanke & Wouter Rosenbrand
 bool ends_with(const std::string& value, const std::string& ending) {
     if (ending.size() > value.size()) return false;
     return std::equal(ending.rbegin(), ending.rend(), value.rbegin());
